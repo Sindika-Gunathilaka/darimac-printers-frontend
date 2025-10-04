@@ -130,6 +130,7 @@ function CustomerList() {
         <Table sx={{ minWidth: 650 }}>
           <TableHead>
             <TableRow>
+              <TableCell>Customer Number</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Phone</TableCell>
@@ -140,19 +141,20 @@ function CustomerList() {
           <TableBody>
             {loading ? (
               <TableRow>
-                <TableCell colSpan={5} align="center">
+                <TableCell colSpan={6} align="center">
                   Loading customers...
                 </TableCell>
               </TableRow>
             ) : customers.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={5} align="center">
+                <TableCell colSpan={6} align="center">
                   No customers found
                 </TableCell>
               </TableRow>
             ) : (
               customers.map((customer) => (
                 <TableRow key={customer.id}>
+                  <TableCell>{customer.customerNumber}</TableCell>
                   <TableCell component="th" scope="row">
                     {customer.name}
                   </TableCell>
